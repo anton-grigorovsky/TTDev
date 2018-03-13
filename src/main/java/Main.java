@@ -1,17 +1,25 @@
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+
 /**
  * Created by Антон on 13.03.2018.
  */
-public class Main {
+public class Main extends Application{
 
     public static void main(String[] args) throws InterruptedException{
-        StringStorage storage = new StringStorage();
-        new ThreadEntity(1, storage);
-        new ThreadEntity(2, storage);
+        launch(args);
 
-        while (true) {
-            System.out.println(storage.get());
-            Thread.sleep(1000);
-        }
+    }
 
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        primaryStage.setTitle("My App");
+        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.show();
     }
 }

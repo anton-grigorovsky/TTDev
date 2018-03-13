@@ -19,16 +19,17 @@ public class ThreadEntity implements Runnable {
     public void run() {
         while (!isStopped) {
             try {
-                Thread.sleep(DELAY);
                 synchronized (storage) {
                     int count = 0;
                     while (count < 10 && !isStopped) {
                         storage.add(num);
                         count++;
                         Thread.sleep(DELAY);
+
                     }
                 }
                 Thread.yield();
+                Thread.sleep(DELAY);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

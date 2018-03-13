@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.TextFlow?>
+<BorderPane prefHeight="400.0" prefWidth="484.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <top>
+      <TextFlow prefHeight="312.0" prefWidth="484.0" BorderPane.alignment="CENTER" />
+      <Label fx:id="label" layoutX="126" layoutY="120" minHeight="36.0" minWidth="169" prefHeight="202.0" prefWidth="262.0" />
+   </top>
+   <bottom>
+      <BorderPane prefHeight="84.0" prefWidth="411.0" BorderPane.alignment="CENTER">
+         <left>
+            <Button onAction="#startCount" alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="31.0" prefWidth="62.0" text="Start" BorderPane.alignment="CENTER" />
+         </left>
+         <center>
+            <Button onAction="#clearString" mnemonicParsing="false" text="Clear" BorderPane.alignment="CENTER" />
+         </center>
+         <right>
+            <Button onAction="#stopCount" mnemonicParsing="false" text="Stop" BorderPane.alignment="CENTER" />
+         </right>
+         <BorderPane.margin>
+            <Insets left="50.0" right="50.0" />
+         </BorderPane.margin>
+      </BorderPane>
+   </bottom>
+</BorderPane>
